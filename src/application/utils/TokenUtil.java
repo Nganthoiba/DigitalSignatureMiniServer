@@ -67,18 +67,5 @@ public class TokenUtil {
         Provider configured = base.configure(configFile.toString());
         return configured;
     }
-	/*
-	public static void logout(String libraryPath) throws Exception {
-        // Load PKCS#11 library directly
-        pkcs11 = PKCS11.getInstance(libraryPath, "C_GetFunctionList", null, false);
-        
-        long[] slots = pkcs11.C_GetSlotList(true);
-        if (slots.length == 0) throw new Exception("No token slots found.");
-
-        long session = pkcs11.C_OpenSession(slots[0], PKCS11Constants.CKF_SERIAL_SESSION, null, null);
-        pkcs11.C_Logout(session);
-        pkcs11.C_CloseSession(session);
-
-        System.out.println("Token session logged out.");
-    }*/
+	
 }

@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.classfile.instruction.ReturnInstruction;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class Config {
 	
 	// The key for the server port
 	public static final String SERVER_PORT_KEY = "server_port";
+	public static final String HTTPS_SERVER_PORT_KEY = "https_port";
 	public static final String PKCS11 = "PKCS11";
 	public static final String SUN_PKCS11 = "SunPKCS11";
 	
@@ -34,13 +36,21 @@ public class Config {
 	// The default server port
 	public static final int DEFAULT_SERVER_PORT = 8080;
 	
+	// The default server port with SSL
+	public static final int DEFAULT_HTTPS_SERVER_PORT = 8080;
+	
 	
 	public static String get(String key) {
 		// This method should read the configuration file and return the value for the given key
 		// For now, we will just return the default values
+		String valueString = null;
 		switch (key) {
 			case SERVER_PORT_KEY:
-				return String.valueOf(DEFAULT_SERVER_PORT);
+				valueString =  String.valueOf(DEFAULT_SERVER_PORT);
+				break;
+			case HTTPS_SERVER_PORT_KEY:
+				valueString = String.valueOf(DEFAULT_HTTPS_SERVER_PORT);
+				break;
 			default:
 				// If the key is not found, read the configuration file epass_config.cfg
 		    	File configFile = new File(CONFIG_FILE_PATH);
@@ -55,6 +65,7 @@ public class Config {
 		    	// If the file does not exist, return null
 				return null;
 		}
+		return valueString;
 	}
 	
 	

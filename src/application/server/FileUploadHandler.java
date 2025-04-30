@@ -137,8 +137,7 @@ public class FileUploadHandler implements HttpHandler {
             exchange.getResponseHeaders().add("Access-Control-Allow-Origin", clientOrigin);
 			Response.send(exchange,response , 500);
         }
-    }
-    
+    }   
 
     
 }
