@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="263.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.MainController">
+   <children>
+      <AnchorPane layoutY="8.0" prefHeight="243.0" prefWidth="478.0">
+         <children>
+            <Label layoutX="19.0" layoutY="18.0" text="Select Epass Driver:" />
+            <Button fx:id="selectFileButton" layoutX="380.0" layoutY="14.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="77.0" text="Browse file" />
+            <Button fx:id="runServerButton" layoutX="136.0" layoutY="57.0" mnemonicParsing="false" onAction="#startServer" prefHeight="25.0" prefWidth="85.0" text="Start Server" />
+            <TextArea fx:id="consoleTextArea" layoutX="137.0" layoutY="102.0" prefHeight="116.0" prefWidth="321.0" />
+            <Button fx:id="stopServerButton" disable="true" layoutX="242.0" layoutY="57.0" mnemonicParsing="false" onAction="#stopServer" text="Stop Server" />
+            <TextField fx:id="epassDriverFilePath" layoutX="136.0" layoutY="14.0" prefHeight="25.0" prefWidth="240.0" promptText="Select the correct epass token driver PKCS#11 DLL file..." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
